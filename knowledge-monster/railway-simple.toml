@@ -1,0 +1,16 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd backend && npm install"
+startCommand = "cd backend && node src/index.js"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 60
+
+[variables]
+NODE_ENV = "production"
+PORT = "3000"
+
+# 临时使用默认值，稍后配置
+JWT_SECRET = "temporary-jwt-secret-for-initial-deployment"
+CORS_ORIGIN = "*"

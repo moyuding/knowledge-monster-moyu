@@ -1,21 +1,10 @@
-# Railway 配置 - 使用 Docker 构建器
-# 如果 Nixpacks 失败，使用这个
+# 极简 Railway 配置
+# 让 Railway 自动检测构建方式
 
 [build]
-builder = "docker"
-dockerfile = "knowledge-monster/deploy/Dockerfile"
-
-[deploy]
-healthcheckPath = "/health"
+# 不指定 builder，让 Railway 自动选择
 
 [variables]
 NODE_ENV = "production"
 PORT = "3000"
-JWT_SECRET = "temporary-jwt-secret-change-this-in-production"
-CORS_ORIGIN = "*"
-
-# 临时值
-SUPABASE_URL = "http://localhost:5432"
-SUPABASE_ANON_KEY = "dummy"
-SUPABASE_SERVICE_KEY = "dummy"
-DEEPSEEK_API_KEY = "dummy"
+JWT_SECRET = "temporary-secret"

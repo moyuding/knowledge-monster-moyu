@@ -1,9 +1,9 @@
-# Nixpacks 配置文件
-# 明确告诉 Nixpacks 如何构建和启动
+# Nixpacks 配置文件 - 修复版
+# 使用小写命令，明确路径
 
 [phases.setup]
 cmds = [
-    "cd backend && npm install"
+    "cd knowledge-monster/backend && npm install"
 ]
 
 [phases.build]
@@ -12,4 +12,4 @@ cmds = [
 ]
 
 [start]
-cmd = "cd backend && npm start"
+cmd = "cd knowledge-monster/backend && npm start"

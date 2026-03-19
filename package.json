@@ -1,0 +1,27 @@
+{
+  "name": "knowledge-monster-moyu",
+  "version": "1.0.0",
+  "description": "Knowledge Monster - Gamified Learning Platform",
+  "private": true,
+  "workspaces": [
+    "knowledge-monster/*"
+  ],
+  "scripts": {
+    "start": "cd knowledge-monster/backend && node src/index.js",
+    "build": "echo 'Building knowledge-monster...'",
+    "dev": "cd knowledge-monster/backend && npm run dev",
+    "install": "cd knowledge-monster/backend && npm install"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "education",
+    "gamification",
+    "ai-grading",
+    "learning-platform"
+  ],
+  "author": "moyuding",
+  "license": "MIT"
+}

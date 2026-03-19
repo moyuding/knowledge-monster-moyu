@@ -1,7 +1,7 @@
 [build]
 builder = "nixpacks"
-buildCommand = "npm install"
-startCommand = "npm start"
+buildCommand = "chmod +x start.sh && npm install"
+startCommand = "./start.sh"
 
 [deploy]
 healthcheckPath = "/health"

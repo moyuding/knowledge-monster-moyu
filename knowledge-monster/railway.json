@@ -1,0 +1,12 @@
+{
+  "build": {
+    "builder": "nixpacks",
+    "buildCommand": "chmod +x start.sh && npm install",
+    "startCommand": "./start.sh"
+  },
+  "deploy": {
+    "startCommand": "./start.sh",
+    "healthcheckPath": "/health",
+    "restartPolicyType": "on-failure"
+  }
+}

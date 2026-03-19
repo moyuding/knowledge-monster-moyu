@@ -1,0 +1,3 @@
+web: ./start.sh
+worker: node backend/src/worker.js
+release: node backend/src/migrate.js

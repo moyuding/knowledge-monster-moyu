@@ -1,22 +1,21 @@
-# Railway 配置 - Node.js 项目
-# 明确告诉 Railway 这是 Node.js 应用
+# 极简 Railway 配置 - 避免超时
 
 [build]
 builder = "nixpacks"
-# 让 Nixpacks 自动检测 Node.js 版本
+
+# 明确指定快速构建
+[build.args]
+NIXPACKS_BUILD_TIMEOUT = "600"  # 10分钟
+NIXPACKS_CACHE = "true"
 
 [deploy]
 healthcheckPath = "/health"
-healthcheckTimeout = 60
+healthcheckTimeout = 30  # 缩短健康检查超时
 
 [variables]
 NODE_ENV = "production"
 PORT = "3000"
-JWT_SECRET = "temporary-jwt-secret-change-this-in-production"
-CORS_ORIGIN = "*"
+JWT_SECRET = "temporary-secret-for-now"
 
-# 临时值
-SUPABASE_URL = "http://localhost:5432"
-SUPABASE_ANON_KEY = "dummy"
-SUPABASE_SERVICE_KEY = "dummy"
-DEEPSEEK_API_KEY = "dummy"
+# 只保留必要变量，其他用默认值
+CORS_ORIGIN = "*"

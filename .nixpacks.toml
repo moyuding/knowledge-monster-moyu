@@ -1,0 +1,28 @@
+# Nixpacks 优化配置
+# 加速构建，避免超时
+
+[phases.setup]
+cmds = [
+    "cd knowledge-monster/backend && npm install --omit=dev --no-audit --no-fund"
+]
+
+[phases.build]
+cmds = [
+    "echo '构建完成'"
+]
+
+[start]
+cmd = "node knowledge-monster/backend/src/index.js"
+
+# 缓存配置
+[build.cache]
+paths = [
+    "knowledge-monster/backend/node_modules"
+]
+
+# 构建优化
+[build.args]
+NODE_ENV = "production"
+NPM_CONFIG_PRODUCTION = "true"
+NPM_CONFIG_AUDIT = "false"
+NPM_CONFIG_FUND = "false"

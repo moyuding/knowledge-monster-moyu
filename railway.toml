@@ -1,10 +1,8 @@
-# Railway 配置 - 修复版
-# 明确指定路径和命令
+# Railway 配置 - 使用 Nixpacks 构建
+# 依赖 nixpacks.toml 配置文件
 
 [build]
 builder = "nixpacks"
-buildCommand = "cd knowledge-monster && npm install"
-startCommand = "node knowledge-monster/backend/src/index.js"
 
 [deploy]
 healthcheckPath = "/health"

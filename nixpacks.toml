@@ -1,0 +1,15 @@
+# Nixpacks 配置文件
+# 明确告诉 Nixpacks 如何构建和启动
+
+[phases.setup]
+cmds = [
+    "cd backend && npm install"
+]
+
+[phases.build]
+cmds = [
+    "echo 'Build completed'"
+]
+
+[start]
+cmd = "cd backend && npm start"

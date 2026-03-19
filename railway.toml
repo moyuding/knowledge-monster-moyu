@@ -1,5 +1,5 @@
-# Railway 配置 for knowledge-monster 项目
-# 项目位于 knowledge-monster/ 子目录中
+# 极简 Railway 配置
+# 只包含必要字段，避免解析错误
 
 [build]
 builder = "nixpacks"
@@ -8,9 +8,6 @@ startCommand = "cd knowledge-monster && node backend/src/index.js"
 
 [deploy]
 healthcheckPath = "/health"
-healthcheckTimeout = 60
-restartPolicyType = "on-failure"
-restartPolicyMaxRetries = 3
 
 [variables]
 NODE_ENV = "production"
@@ -18,30 +15,8 @@ PORT = "3000"
 JWT_SECRET = "temporary-jwt-secret-change-this-in-production"
 CORS_ORIGIN = "*"
 
-# 数据库配置（需要创建 Supabase 后更新）
+# 临时值，部署成功后再配置
 SUPABASE_URL = "http://localhost:5432"
-SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtub3dsZWRnZS1tb25zdGVyIiwiYXBwIjoic3VwYWJhc2UtYXBwIiwic3ViIjoic3VwYWJhc2UtdXNlciIsImV4cCI6MTYxNjE5MDIyNn0.DUMMY_KEY_DO_NOT_USE_IN_PRODUCTION"
-SUPABASE_SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtub3dsZWRnZS1tb25zdGVyIiwiYXBwIjoic3VwYWJhc2UtYXBwIiwic3ViIjoic3VwYWJhc2UtdXNlciIsImV4cCI6MTYxNjE5MDIyNn0.DUMMY_KEY_DO_NOT_USE_IN_PRODUCTION"
-
-# AI配置（需要 DeepSeek API 密钥后更新）
-DEEPSEEK_API_KEY = "dummy-key-for-initial-deployment"
-DEEPSEEK_API_URL = "https://api.volcengine.com/deepseek/v3"
-
-[healthcheck]
-path = "/health"
-initialDelay = 10
-periodSeconds = 30
-timeoutSeconds = 10
-successThreshold = 1
-failureThreshold = 3
-
-[observability]
-logs = true
-metrics = true
-
-[scaling]
-min = 1
-max = 3
-cpu = 80
-memory = 512
-replicas = 1
+SUPABASE_ANON_KEY = "dummy-key"
+SUPABASE_SERVICE_KEY = "dummy-key"
+DEEPSEEK_API_KEY = "dummy-key"

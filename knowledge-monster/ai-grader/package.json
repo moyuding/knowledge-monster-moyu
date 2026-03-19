@@ -1,0 +1,32 @@
+{
+  "name": "knowledge-monster-ai-grader",
+  "version": "1.0.0",
+  "description": "知识怪 - AI批改模块",
+  "main": "src/ai-grader.js",
+  "scripts": {
+    "start": "node src/ai-grader.js",
+    "dev": "nodemon src/ai-grader.js",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=unit",
+    "test:integration": "jest --testPathPattern=integration"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "mathjs": "^11.11.0",
+    "natural": "^6.8.0",
+    "winston": "^3.11.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "ai-grading",
+    "education",
+    "mathematics",
+    "deepseek"
+  ],
+  "author": "知识怪团队",
+  "license": "MIT"
+}

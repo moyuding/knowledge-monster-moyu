@@ -1,0 +1,41 @@
+[build]
+builder = "nixpacks"
+buildCommand = "npm run build"
+startCommand = "npm start"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 60
+restartPolicyType = "on-failure"
+restartPolicyMaxRetries = 3
+
+[variables]
+NODE_ENV = "production"
+PORT = "3000"
+JWT_SECRET = "your-jwt-secret-key-change-this-in-production"
+JWT_EXPIRES_IN = "7d"
+CORS_ORIGIN = "https://knowledge-monster.vercel.app"
+SUPABASE_URL = "@supabase_url"
+SUPABASE_ANON_KEY = "@supabase_anon_key"
+SUPABASE_SERVICE_KEY = "@supabase_service_key"
+DEEPSEEK_API_KEY = "@deepseek_api_key"
+DEEPSEEK_API_URL = "https://api.volcengine.com/deepseek/v3"
+
+[healthcheck]
+path = "/health"
+initialDelay = 10
+periodSeconds = 30
+timeoutSeconds = 10
+successThreshold = 1
+failureThreshold = 3
+
+[observability]
+logs = true
+metrics = true
+
+[scaling]
+min = 1
+max = 3
+cpu = 80
+memory = 512
+replicas = 1

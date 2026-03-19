@@ -1,10 +1,10 @@
-# 极简 Railway 配置
-# 只包含必要字段，避免解析错误
+# Railway 配置 - 修复版
+# 明确指定路径和命令
 
 [build]
 builder = "nixpacks"
 buildCommand = "cd knowledge-monster && npm install"
-startCommand = "cd knowledge-monster && node backend/src/index.js"
+startCommand = "node knowledge-monster/backend/src/index.js"
 
 [deploy]
 healthcheckPath = "/health"
@@ -15,8 +15,8 @@ PORT = "3000"
 JWT_SECRET = "temporary-jwt-secret-change-this-in-production"
 CORS_ORIGIN = "*"
 
-# 临时值，部署成功后再配置
+# 临时值
 SUPABASE_URL = "http://localhost:5432"
-SUPABASE_ANON_KEY = "dummy-key"
-SUPABASE_SERVICE_KEY = "dummy-key"
-DEEPSEEK_API_KEY = "dummy-key"
+SUPABASE_ANON_KEY = "dummy"
+SUPABASE_SERVICE_KEY = "dummy"
+DEEPSEEK_API_KEY = "dummy"
